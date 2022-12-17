@@ -2,6 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
+//ProductVO é um espelho dos atributos da entidade Product sem as annotations
 namespace GeekShopping.ProductAPI.Model
 {
     [Table("product")]
@@ -10,7 +12,7 @@ namespace GeekShopping.ProductAPI.Model
         [Column("name")]
         [Required]
         [StringLength(150)]
-        public string? name { get; set; }
+        public string? Name { get; set; }
 
         [Column("price")]
         [Required]
