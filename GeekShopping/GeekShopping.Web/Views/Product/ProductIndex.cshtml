@@ -16,18 +16,30 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Price</th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Price
+                </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.CategoryName</td>
-                    <td>@((item.Price).ToString("c"))</td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.CategoryName
+                    </td>
+                    <td>
+                        @((item.Price).ToString("c"))
+                    </td>
                     <td>
                        <a asp-action="ProductUpdate" class="btn btn-success" asp-route-id="@item.Id">
                            <i class="fas fa-edit"></i>

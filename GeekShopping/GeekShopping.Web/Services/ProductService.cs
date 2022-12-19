@@ -26,7 +26,7 @@ namespace GeekShopping.Web.Services
             return await response.ReadContentAs<ProductModel>();
         }
 
-        public async Task<ProductModel> CreateProductByName(ProductModel model)
+        public async Task<ProductModel> CreateProduct(ProductModel model)
         {
             var response = await _client.PostAsJson(BasePath, model);
             if (response.IsSuccessStatusCode)
@@ -34,8 +34,7 @@ namespace GeekShopping.Web.Services
             else
                 throw new Exception("Something went wrong when calling API");
         }
-
-        public async Task<ProductModel> UpdateProductByName(ProductModel model)
+        public async Task<ProductModel> UpdateProduct(ProductModel model)
         {
             var response = await _client.PutAsJson(BasePath, model);
             if (response.IsSuccessStatusCode)
@@ -47,7 +46,6 @@ namespace GeekShopping.Web.Services
         public async Task<bool> DeleteProductById(long id)
         {
             var response = await _client.DeleteAsync($"{BasePath}/{id}");
-
             if (response.IsSuccessStatusCode)
                 return await response.ReadContentAs<bool>();
             else
